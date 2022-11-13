@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kamińska Paulina</title>
+    <link rel="stylesheet" href="css/pk_main.css">
+    <script src="js/pk_main.js"></script>
+</head>
+
+<body onLoad="pkStartCalc()">
+    <header>
+        <nav>
+            <span>Paulina Kamińska</span>
+            <ul>
+                <li onClick="pkShowCalc()">Kalkulator</li>
+                <li onClick="pkShowOperators()">Operatory</li>
+                <li onClick="pkShowMemory()">Pamięć</li>
+            </ul>
+        </nav>
+    </header>
+    <article id="pk_calc_view">
+        <h1>Kalkulator</h1>
+        <hr>
+        <div class="pk-calc-box">
+            <div>
+                <label for="pk_first"></label>
+                <input id="pk_first" type="number" name="pk_first" class="pk_calc_element">
+            </div>
+            <div>
+                <label for="pk_oparator">Operator</label>
+                <select id="pk_oparator" onChange="setLabels(); pkCount();">
+                   <!-- options are automatically generated -->
+                </select>
+            </div>
+            <div>
+                <label for="pk_second"></label>
+                <input id="pk_second" type="number" name="pk_second" class="pk_calc_element">
+            </div>
+        </div>
+        <div class="pk-calc-box">
+            <div>
+                <button id="pk_count" onclick="pkCount()">Oblicz!</button>
+            </div>
+        </div>
+        <div class="pk-calc-box">
+            <div>
+                <label for="pk_result">Wynik</label>
+                <input id="pk_result" type="number" name="pk_result" readonly onMouseover="pkCount()" class="pk_calc_element">
+            </div>
+        </div>
+        <br>
+        <div id="pkInfoBox"></div>
+    </article>
+
+    <article id="pk_operators_view">
+      <h2>Operatory</h2>
+      <hr>
+      <div class="pk_rubik">
+        <button id="pk_sum" data-text="+" data-value="+" onClick="pkTogglePick(this)">+</button>
+        <button id="pk_subtraction" data-text="-" data-value="-" onClick="pkTogglePick(this)">-</button>
+        <button id="pk_multi" data-text="*" data-value="*" onClick="pkTogglePick(this)">*</button>
+        <button id="pk_divi" data-text="/" data-value="/" onClick="pkTogglePick(this)">/</button>
+        <button id="pk_modulo" data-text="%" data-value="%" onClick="pkTogglePick(this)">%</button>
+        <button id="pk_exp" data-text="^" data-value="^" onClick="pkTogglePick(this)">n<sup>x</sup></button>
+        <button id="pk_sq_root" data-text="√" data-value="√" onClick="pkTogglePick(this)">√</button>
+      </div>
+    </article>
+    <article id="pk_memory_view">
+      <h2>Pamięć</h2>
+      <hr>
+      <table id="pk-results">
+        <tr>
+          <th>Lp.</th>
+          <th colspan="3">Działanie</th>
+          <th>Wynik</th>
+        </tr>
+      </table>
+    </article>
+
+
+</body>
+
+</html>

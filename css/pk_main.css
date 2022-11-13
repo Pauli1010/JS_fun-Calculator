@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    background-color: #2a2a2a;
+}
+nav span {
+    display: block;
+    padding: 20px 30px;
+    background-color: #a2a2a2;
+    color: #fff;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 20px 30px;
+    color: #fff;
+}
+
+article {
+    width: 100%;
+    height: calc(100% - 58px);
+    padding: 30px;
+}
+
+/***** calc view ******/
+#pk_calc_view {}
+
+#pkInfoBox {
+  color: red;
+}
+
+.pk-calc-box {
+    display: flex;
+    width: 700px;
+    margin: auto;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 0;
+}
+
+.pk-calc-box label,
+.pk-calc-box input,
+.pk-calc-box select,
+.pk-calc-box button {
+    display: block;
+    width: 100%;
+    height: 32px;
+    border-radius: 3px;
+}
+
+.pk-calc-box label {
+    text-transform: capitalize;
+}
+
+.pk-calc-box select,
+.pk-calc-box input {
+  border: 1px solid #ccc;
+}
+
+.pk-calc-box button {
+  background-color: green;
+  border: 2px solid green;
+  color: #fff;
+  padding: 5px 15px;
+}
+
+/***** operators view ******/
+#pk_operators_view {
+    display: none;
+}
+
+.pk_rubik {
+  width: 160px;
+  gap: 3px;
+  text-align: center;
+  margin: auto;
+}
+
+.pk_rubik button {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #2a2a2a;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.pk_rubik button.picked {
+  background-color: green;
+}
+/***** memory view ******/
+#pk_memory_view {
+    display: none;
+}
+
+table {
+  width: 500px;
+  margin: auto;
+}
+
+td:nth-of-type(5n + 2),
+td:nth-of-type(5n + 3),
+td:nth-of-type(5n + 4) {
+  width: 40px;
+}
