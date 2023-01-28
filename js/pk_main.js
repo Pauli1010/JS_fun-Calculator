@@ -1,5 +1,6 @@
 function pkStartCalc() {
     initializeOperators();
+    initializePickedOperators();
     clearInputs();
 }
 
@@ -98,6 +99,14 @@ function setLabels() {
 function pkTogglePick(el) {
   el.classList.toggle('picked');
   resetPickedOperators();
+}
+
+function initializePickedOperators() {
+    let pk_initial_operators = ['pk_sum', 'pk_subtraction', 'pk_multi', 'pk_divi', 'pk_modulo'];
+    pk_initial_operators.forEach( function(pk_element) {
+        let pk_option = document.getElementById(pk_element);
+        pk_option.classList.add('picked');
+    });
 }
 
 function pkCount() {

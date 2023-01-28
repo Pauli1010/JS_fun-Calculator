@@ -30,6 +30,12 @@ nav ul li {
     color: #fff;
 }
 
+nav ul li:hover {
+    background-color: #a2a2a2;
+    color: #000;
+    cursor: pointer;
+}
+
 article {
     width: 100%;
     height: calc(100% - 58px);
