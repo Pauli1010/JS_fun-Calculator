@@ -152,10 +152,9 @@ function pkGetReult(pk_oparator, pk_first, pk_second) {
               pkShowErrorMessage('no_negative_for_sq_root');
               return null;
           } else if (pk_second == 0) {
-              pkShowErrorMessage('no_0_division');
-              return null;
+              return 1;
           } else {
-              return (pk_first ^ (1 / pk_second));
+              return (pk_first ** (1 / pk_second));
           }
       default:
           pkShowErrorMessage(null);
@@ -170,18 +169,18 @@ function pkShowErrorMessage(pk_type) {
 function pkSetError_message(pk_type) {
   switch (pk_type) {
       case 'no_0_division':
-        return 'Nie mozna dzielić przez 0';
+        return 'Nie można dzielić przez 0';
         // break;
       case 'no_negative_for_sq_root':
         return 'Nie mozna pierwiastkować liczb ujemnych';
         // break;
       default:
-        return "Nieznane działanie";
+        return 'Nieznane działanie';
   }
 }
 
 function pkSetAgainMessageError(pk_first, pk_operator, pk_second) {
-  if ((['/', '%', '√'].includes(pk_operator)) && (pk_second == 0)) {
+  if ((['/', '%'].includes(pk_operator)) && (pk_second == 0)) {
       return pkSetError_message('no_0_division');
   } else if (('√' == pk_operator) && (pk_first < 0)) {
       return pkSetError_message('no_negative_for_sq_root');
